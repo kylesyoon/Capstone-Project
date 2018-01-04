@@ -24,3 +24,11 @@ root/
 			...
 		...
 ```
+
+Additionally, you'll need to download the [keras-retinanet](https://github.com/fizyr/keras-retinanet) into the root of the project as well.
+Then from the */keras-retinanet/ directory* run:
+```
+python setup.py install --user
+```
+[(Step 2 of the Installation guide from the keras-retinanet README)](https://github.com/fizyr/keras-retinanet#installation)
+
