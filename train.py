@@ -36,7 +36,7 @@ def create_generator():
                                        train_generator, batch_size=args['batch_size'])
     # no flip for val
     val_generator = ImageDataGenerator()
-    csv_val_generator = CSVGenerator('./train.csv', './classes.csv',
+    csv_val_generator = CSVGenerator('./validation.csv', './classes.csv',
                                      val_generator, batch_size=args['batch_size'])
     return csv_train_generator, csv_val_generator
 
@@ -83,8 +83,10 @@ def create_callbacks():
                                                      mode='auto', epsilon=0.0001,
                                                      cooldown=0, min_lr=0)
     loss_history = LossHistory()
+    early = keras.callbacks.EarlyStopping(monitor='val_loss', min_delta=0,
+                                          patience=0, verbose=0, mode='auto')
 
-    return [checkpoint, lr_scheduler, loss_history]
+    return [checkpoint, lr_scheduler, loss_history, early]
 
 
 def save_history(history):
