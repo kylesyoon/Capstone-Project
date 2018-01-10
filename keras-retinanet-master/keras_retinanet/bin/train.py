@@ -19,6 +19,7 @@ limitations under the License.
 import argparse
 import os
 import sys
+import pickle
 
 import keras
 import keras.preprocessing.image
@@ -169,7 +170,6 @@ def create_generators(args):
 
     return train_generator, validation_generator
 
-
 def check_args(parsed_args):
     """
     Function to check for inherent contradictions within parsed arguments.
@@ -218,7 +218,6 @@ def parse_args(args):
 
     return check_args(parser.parse_args(args))
 
-
 def main(args=None):
     # parse arguments
     if args is None:
@@ -252,14 +251,21 @@ def main(args=None):
         args,
     )
 
+    start_time = time.time()
     # start training
-    training_model.fit_generator(
+    history = training_model.fit_generator(
         generator=train_generator,
         steps_per_epoch=args.steps,
         epochs=args.epochs,
         verbose=1,
         callbacks=callbacks,
     )
+    end_time = time.time()
+
+    # save the history as a json for chart
+    with open('history.pkl', 'wb') as history_file:
+        pickle.dump(history.history, history_file)
+
 
 if __name__ == '__main__':
     main()
