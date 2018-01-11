@@ -25,6 +25,7 @@ import keras
 import keras.preprocessing.image
 from keras.utils import multi_gpu_model
 import tensorflow as tf
+import time
 
 # Allow relative imports when being executed as script.
 if __name__ == "__main__" and __package__ is None:
@@ -205,6 +206,7 @@ def parse_args(args):
     csv_parser.add_argument('annotations', help='Path to CSV file containing annotations for training.')
     csv_parser.add_argument('classes', help='Path to a CSV file containing class label mapping.')
     csv_parser.add_argument('--val-annotations', help='Path to CSV file containing annotations for validation (optional).')
+    csv_parser.add_argument('--val-steps', help='Number of validation steps per epoch', type=int, default=1000)
 
     parser.add_argument('--weights',       help='Weights to use for initialization (defaults to ImageNet).', default='imagenet')
     parser.add_argument('--batch-size',    help='Size of the batches.', default=1, type=int)
@@ -259,6 +261,8 @@ def main(args=None):
         epochs=args.epochs,
         verbose=1,
         callbacks=callbacks,
+	validation_data=validation_generator,
+	validation_steps=args.val_steps,
     )
     end_time = time.time()
 
