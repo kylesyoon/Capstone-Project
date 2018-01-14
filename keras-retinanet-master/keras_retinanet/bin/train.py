@@ -75,8 +75,8 @@ def create_models(num_classes, weights='imagenet', multi_gpu=0):
         loss={
             'regression'    : losses.smooth_l1(),
             'classification': losses.focal()
+        optimizer=keras.optimizers.adam(lr=1e-5, clipnorm:0.001)
         },
-        optimizer=keras.optimizers.SGD(lr=1e-2, decay=0.0001, momentum=0.9)
     )
 
     return model, training_model, prediction_model
