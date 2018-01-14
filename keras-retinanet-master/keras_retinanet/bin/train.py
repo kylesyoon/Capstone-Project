@@ -76,7 +76,7 @@ def create_models(num_classes, weights='imagenet', multi_gpu=0):
             'regression'    : losses.smooth_l1(),
             'classification': losses.focal()
         },
-        optimizer=keras.optimizers.adam(lr=1e-5, clipnorm=0.001)
+        optimizer=keras.optimizers.SGD(lr=1e-2, momentum=0.0001, momentum=0.9)
     )
 
     return model, training_model, prediction_model
@@ -109,7 +109,6 @@ def create_callbacks(model, training_model, prediction_model, validation_generat
     callbacks.append(lr_scheduler)
 
     return callbacks
-
 
 def create_generators(args):
     # create image data generator objects
@@ -261,8 +260,8 @@ def main(args=None):
         epochs=args.epochs,
         verbose=1,
         callbacks=callbacks,
-	validation_data=validation_generator,
-	validation_steps=args.val_steps,
+    	validation_data=validation_generator,
+    	validation_steps=args.val_steps,
     )
     end_time = time.time()
 
