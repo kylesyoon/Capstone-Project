@@ -1,11 +1,11 @@
-# VIVA Hand Detection Challenge Using A Keras RetinaNet
+# Capstone Project
 
-Udacity MLND Capstone Project
+## Udacity MLND
 
-This project uses [`keras-retinanet`](https://github.com/fizyr/keras-retinanet).
+### VIVA Hand Detection Challenge Using A Keras RetinaNet
 
-## Setup
+In this project, [RetinaNet](https://research.fb.com/publications/focal-loss-for-dense-object-detection/), a one-stage object detection system developed by Lin et al is used for the [VIVA Hand Detection Challenge](http://cvrr.ucsd.edu/vivachallenge/index.php/hands/hand-detection/).
 
-In order to get this project going, the [VIVA Hand Detection Challenge](http://cvrr.ucsd.edu/vivachallenge/index.php/hands/hand-detection/) [training dataset](http://cvrr.ucsd.edu/vivachallenge/data/LISA_HD_Static.zip) and [evaluation kit](http://cvrr.ucsd.edu/vivachallenge/data/EvalTools_HD.zip) must be downloaded and extracted.
+The model training piggy backs off the [`keras-retinanet`](https://github.com/fizyr/keras-retinanet) implementation.
 
-## Preprocessing
+You'll also need Octave and [Piotr's Computer Vision Matlab Toolbox](https://pdollar.github.io/toolbox/) for evaluation.
