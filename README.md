@@ -14,4 +14,5 @@ You'll also need Octave and [Piotr's Computer Vision Matlab Toolbox](https://pdo
 
 #### Sample Detection
 
-![](https://github.com/yoonapps/MLND-Capstone/blob/master/misc/sample_20_025.png)
+![](https://github.com/yoonapps/MLND-Capstone/blob/master/misc/sample_1.png)
+![](https://github.com/yoonapps/MLND-Capstone/blob/master/misc/sample_2.png)
