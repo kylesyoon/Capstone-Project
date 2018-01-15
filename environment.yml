@@ -21,11 +21,13 @@ dependencies:
 - zlib=1.2.11=ha838bed_2
 - pip:
   - bleach==1.5.0
-  - decorator==4.1.2
+  - cycler==0.10.0
+  - decorator==4.0.11
   - entrypoints==0.2.3
   - enum34==1.1.6
   - h5py==2.7.1
   - html5lib==0.9999999
+  - imageio==2.1.2
   - ipykernel==4.7.0
   - ipython==6.2.1
   - ipython-genutils==0.2.0
@@ -39,7 +41,9 @@ dependencies:
   - keras-retinanet==0.0.1
   - markdown==2.6.10
   - markupsafe==1.0
+  - matplotlib==2.1.1
   - mistune==0.8.3
+  - moviepy==0.2.3.2
   - nbconvert==5.3.1
   - nbformat==4.4.0
   - notebook==5.2.2
@@ -55,7 +59,9 @@ dependencies:
   - ptyprocess==0.5.2
   - pycocotools==2.0
   - pygments==2.2.0
+  - pyparsing==2.2.0
   - python-dateutil==2.6.1
+  - pytz==2017.3
   - pyyaml==3.12
   - pyzmq==16.0.3
   - scikit-learn==0.19.1
@@ -67,6 +73,7 @@ dependencies:
   - terminado==0.8.1
   - testpath==0.3.1
   - tornado==4.5.2
+  - tqdm==4.11.2
   - traitlets==4.3.2
   - wcwidth==0.1.7
   - webencodings==0.5.1
