@@ -49,7 +49,7 @@ Some scores using the [VIVA Hand Detection Challenge evaluation kit](http://cvrr
 | Epoch 18        |**92.6**/90.3| 82.3/71.1    |
 | Epoch 21        | 91.0/90.7   | 78.9/**73.9**|
 
-The results for the snapshot at Epoch 21 ranks **5th** in the leaderboard. (Ranked by L2 AR.)
+The results for the snapshot at Epoch 21 ranks **4th** in the leaderboard. (Ranked by L2 AR.)
 
 ### Non-VIVA Challenge Detection
 
